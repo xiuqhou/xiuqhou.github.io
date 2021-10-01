@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>&#39;关于建blog过程和踩过的坑&#39; | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="&#39;关于建blog过程和踩过的坑&#39;">
+<meta property="og:url" content="http://example.com/2019/12/12/%E5%85%B3%E4%BA%8E%E5%BB%BAblog%E8%BF%87%E7%A8%8B%E5%92%8C%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-12T15:55:49.000Z">
+<meta property="article:modified_time" content="2019-12-21T14:29:56.969Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-关于建blog过程和踩过的坑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/12/12/%E5%85%B3%E4%BA%8E%E5%BB%BAblog%E8%BF%87%E7%A8%8B%E5%92%8C%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" class="article-date">
+  <time class="dt-published" datetime="2019-12-12T15:55:49.000Z" itemprop="datePublished">2019-12-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      &#39;关于建blog过程和踩过的坑&#39;
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="关于建blog过程和踩过的坑"><a href="#关于建blog过程和踩过的坑" class="headerlink" title="关于建blog过程和踩过的坑"></a>关于建blog过程和踩过的坑</h1><p><em>写在前面：一个电脑新手，这是我第一次写博客，参考的教程来自15级的一个学长，基本就是根据他建立的过程来操作的</em></p>
+<h2 id="主要步骤："><a href="#主要步骤：" class="headerlink" title="主要步骤："></a>主要步骤：</h2><ul>
+<li><font face="微软雅黑" size=3>注册github账户，新开一个repository，设置git page<br>也可以租一个VPS，<del>但是免费的git page托管服务多好用啊</del></font></li>
+<li><font face="微软雅黑" size=3>下载安装hexo，跟着教程来操作就OK了</font>  </li>
+<li><font face="微软雅黑" size=3>可以再hexo设置自己喜欢的主题和插件</font></li>
+<li><font face="微软雅黑" size=3>最后托管到github上面</font><blockquote>
+<p><font face="微软雅黑" size=3>其实用这个的另一个原因是我想学一学markdown，之前有看过这个，感觉用起来还不错，语法也和html基本上差不多<del>关键是jupyter notebook也支持</del>(。・∀・)ノ</font></p>
+</blockquote>
+</li>
+</ul>
+<p>嘿嘿(～﹃～)~zZ，先写这么多，踩过的坑有点多，一时间写不完。</p>
+<h2 id="遇到的坑（或者比较难的地方吧）："><a href="#遇到的坑（或者比较难的地方吧）：" class="headerlink" title="遇到的坑（或者比较难的地方吧）："></a>遇到的坑（或者比较难的地方吧）：</h2><blockquote>
+<p>注意，下面所有带[]的表示里面的内容需要根据自己的进行替换，并没有什么其他的意思  </p>
+</blockquote>
+<p>绑定github账户</p>
+<blockquote>
+<p>这部分其实还好，也就是git的使用，baidu教程一大堆，常用的也就那几个</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git init  #初始化本地git仓库</span><br><span class="line">git add filename #添加文件到缓冲区</span><br><span class="line">git commit -m &quot;提交的说明&quot; #提交文件更新</span><br><span class="line">git status  #查看git库的状态</span><br><span class="line">git remote add origin [远端仓库地址] #这样就增加了远程仓库</span><br><span class="line">git push origin master #push到origin仓库的master分支</span><br><span class="line">git push [仓库地址] master #push到仓库master分支</span><br><span class="line">git pull # 拉取远端仓库到本地，如果push有问题，就要先pull，解决冲突，然后再push</span><br><span class="line">git config --global user.name &quot;[你的名字]&quot; #这里用来作为github收到的提交的用户名</span><br><span class="line">git config --global user.name &quot;[你的邮箱]&quot; #和上面作用相同</span><br><span class="line">ssh-keygen  #生成公钥和私钥，用来连接github</span><br></pre></td></tr></table></figure>
+
+<p>购买域名（VPS）</p>
+<blockquote>
+<ul>
+<li>我是在Gandi.net上面买的，感觉还比较便宜。因为大天朝还需要备案，总感觉不太方便，所以就在国外买了，Godaddy也不错听说也不错，但是我注册一直不成功，就换成这个了，目前买的是每年7RMB。  </li>
+<li>Gandi还可以添加网页转址，所以直接将网页转向github的二级域名username.github.io也能用，但是那就没有买域名的意义了。  </li>
+<li>然后就是添加DNS，Gandi提供免费的DNS，但是国外的毕竟速度不如国内，所以用国内的DNSPod，要在Gandi那里改DNS服务器，在DNSPod加上要解析的域名地址，在控制台加上@ A [git pages的IP地址]、WWW CNAME [你的域名]记录。</li>
+<li>最后在本地新建一个CNAME文件，文件内容是你的域名，放到source文件夹下，因为hexo每次clean会将非generate生成的文件清除，而放到source文件夹下不会被清除。</li>
+</ul>
+</blockquote>
+<p>_config.yml的配置<br>我觉得<text style="color:red">最难</text>的一步是URL和ROOT的设置，经常出错。</p>
+<blockquote>
+<ul>
+<li>一开始我的域名是”[username].github.io/[sample]”。<br>那么URL要设置成”[username].github.io/[sample]”，而ROOT要设置成”/[sample]/“（注意’/‘号）</li>
+<li>后来我的域名换成了”umzhaa.website”，也就是现在这个<br>那么我的URL就要设置成”umzhaa.website”，ROOT设置成”/“</li>
+</ul>
+</blockquote>
+<p>添加看板娘</p>
+<blockquote>
+<p>hexo是有自带的看板娘插件的  </p>
+</blockquote>
+<p><code>npm install --save hexo-helper-live2d</code></p>
+<blockquote>
+<p>安装的插件后修改_config.yml，在里面添加</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># Live2D</span><br><span class="line">## https://github.com/EYHN/hexo-helper-live2d</span><br><span class="line">live2d:</span><br><span class="line">  enable: true # 开启live2d</span><br><span class="line">  # enable: false</span><br><span class="line">  scriptFrom: local # 默认</span><br><span class="line">  pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)</span><br><span class="line">  pluginJsPath: lib/ # 脚本文件相对与插件根目录路径</span><br><span class="line">  pluginModelPath: assets/ # 模型文件相对与插件根目录路径</span><br><span class="line">  # scriptFrom: jsdelivr # jsdelivr CDN</span><br><span class="line">  # scriptFrom: unpkg # unpkg CDN</span><br><span class="line">  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span><br><span class="line">  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span><br><span class="line">  debug: false # 调试, 是否在控制台输出日志</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko # npm-module package name</span><br><span class="line">    # use: wanko # 博客根目录/live2d_models/ 下的目录名</span><br><span class="line">    # use: ./wives/wanko # 相对于博客根目录的路径</span><br><span class="line">    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span><br></pre></td></tr></table></figure>
+
+<p><font face="微软雅黑" style="color:blue;" size=4>有关其他模型的下载</font><br><font size=3.5>使用自己下载的模型</font>  </p>
+<p>方式一（推荐使用）：</p>
+<ul>
+<li>在您博客根目录下创建一个 live2d_models 文件夹</li>
+<li>在此文件夹内新建一个子文件夹</li>
+<li>将你的 Live2D 模型复制到这个子文件夹中，自有模型应当有一个 .model.json 文件 (例如 mymiku.model.json)</li>
+<li>将子文件夹的名称输入 _config.yml 的 model.use 中</li>
+</ul>
+<p>方式二：</p>
+<ul>
+<li>您可直接输入相对于博客根目录的自定义路径到 model.use中,示例: ./wives/wanko</li>
+</ul>
+<p><font size=3.5>使用 npm 下载的模型</font><br>方式一：  </p>
+<p>下载现有的 npm 资源</p>
+<ul>
+<li>官方提供了多款精美的模型，<a target="_blank" rel="noopener" href="https://huaji8.top/post/live2d-plugin-2.0/">模型预览</a></li>
+<li>你需要先使用 npm install 模型的包名 来安装，然后将包名输入位于 _config.yml 的 model.use 中</li>
+</ul>
+<p>方式二：</p>
+<ul>
+<li>发布你自己的模型包</li>
+<li>新建一个目录, 用你的 Node 环境执行 npm init，我们推荐您使用 live2d-widget-model-xxx 的包名<br>再使用方式一来使用自己的模型</li>
+</ul>
+<p>先写这么多吧，以后如果有什么要补充的再更新吧，如果没有的话可能就要开新坑了</p>
+<p>2019年12月21日</p>
+<h2 id="显示公式"><a href="#显示公式" class="headerlink" title="显示公式"></a>显示公式</h2><p>首先切换渲染引擎：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+
+<p>然后更改配置文件<code>/node_modules/hexo-renderer-kramed/lib/renderer.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatText</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Fit kramed&#x27;s rule: $$ + \1 + $$</span></span><br><span class="line">    <span class="keyword">return</span> text.replace(<span class="regexp">/`\$(.*?)\$`/g</span>, <span class="string">&#x27;$$$$$1$$$$&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Change inline math rule</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatText</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>停止使用hexo-math，安装mathjax包。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-math --save</span><br></pre></td></tr></table></figure>
+
+<p>安装hexo-renderer-mathjax包</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure>
+
+<p>更新mathjax配置文件</p>
+<p>打开<code>/node_modules/hexo-renderer-mathjax/mathjax.html</code><br>更改为：</p>
+<p><code>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;</code></p>
+<p>因为LaTeX与markdown语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改.</p>
+<p> 打开<code>/node_modules\kramed\lib\rules\inline.js</code><br> 1、</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/</span>,</span><br></pre></td></tr></table></figure>
+
+<p>更改为</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()# +\-.!_&gt;])/</span>,</span><br></pre></td></tr></table></figure>
+
+<p>2、</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">em:</span> /^\b_((<span class="string">?:</span>__<span class="params">|[\s\S])+?)_\b|</span>^\*((<span class="string">?:\*\*</span><span class="params">|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure>
+
+<p>更改为</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
+
+<p>开启mathjax</p>
+<p>打开<code>/themes/yilia</code>主题目录下的<code>config.yml</code>文件<br> 因为我用的<code>yilia</code>主题，所以路径是<code>/themes/yilia</code></p>
+<p>我们需要在<code>config.yml</code>文件 中开启 Mathjax， 找到 mathjax 字段添加如下代码：(不同的主题配置方法略微有区别)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">    <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>写博客文件时要添加mathjax内容。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 特征提取——局部特征</span><br><span class="line">date: <span class="number">2018</span>-<span class="number">07</span>-<span class="number">16</span> <span class="number">09</span>:<span class="number">39</span>:<span class="number">40</span></span><br><span class="line">tags: [GitHub, Mysql]</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
+
+<p>来源于简书：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/68e6f82d88b7">https://www.jianshu.com/p/68e6f82d88b7</a></p>
+<p>作者：AomanHao</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/12/12/%E5%85%B3%E4%BA%8E%E5%BB%BAblog%E8%BF%87%E7%A8%8B%E5%92%8C%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" data-id="cku7qlpcd0004v4w13pj9e296" data-title="&#39;关于建blog过程和踩过的坑&#39;" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/21/PCA%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          PCA相关总结
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">deep learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81/" rel="tag">代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/deep-learning/" style="font-size: 20px;">deep learning</a> <a href="/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 10px;">代码</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 20px;">教程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/01/%E8%AF%AD%E4%B9%89%E7%9B%B8%E4%BC%BC%E6%80%A7%E5%88%86%E6%9E%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/01/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/01/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5%E4%BB%A3%E7%A0%81/">图像拼接代码</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/21/PCA%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/">PCA相关总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

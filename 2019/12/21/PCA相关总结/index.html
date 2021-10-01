@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>PCA相关总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="什么是PCA？ PCA(principal component analysis)，也就是主成分分析，是一种算法，主要用来数据降维。 PCA是将原始的样本矩阵$X$转换成降维后的新样本$Y$的一种方法。 为了实现维度变化我们需要一个 变换矩阵$U$，$Y_{r \times n} &#x3D; {U^T}{r \times m}X{m \times n}$（这里是先转置，再取前n行），用于对行进行压缩 或者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PCA相关总结">
+<meta property="og:url" content="http://example.com/2019/12/21/PCA%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是PCA？ PCA(principal component analysis)，也就是主成分分析，是一种算法，主要用来数据降维。 PCA是将原始的样本矩阵$X$转换成降维后的新样本$Y$的一种方法。 为了实现维度变化我们需要一个 变换矩阵$U$，$Y_{r \times n} &#x3D; {U^T}{r \times m}X{m \times n}$（这里是先转置，再取前n行），用于对行进行压缩 或者">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-21T14:36:50.000Z">
+<meta property="article:modified_time" content="2019-12-22T03:55:21.552Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="deep learning">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-PCA相关总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/12/21/PCA%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2019-12-21T14:36:50.000Z" itemprop="datePublished">2019-12-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      PCA相关总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是PCA？"><a href="#什么是PCA？" class="headerlink" title="什么是PCA？"></a>什么是PCA？</h1><blockquote>
+<p>PCA(principal component analysis)，也就是主成分分析，是一种算法，主要用来数据降维。</p>
+<p>PCA是将原始的样本矩阵$X$转换成降维后的新样本$Y$的一种方法。</p>
+<p>为了实现维度变化我们需要一个</p>
+<p>变换矩阵$U$，$Y_{r \times n} = {U^T}<em>{r \times m}X</em>{m \times n}$（这里是先转置，再取前n行），用于对行进行压缩</p>
+<p>或者矩阵$V$，${Y_{m \times r}} = {X_{m \times n}}{V_{n \times r}}$，用于对列进行压缩。</p>
+<p>一般不会对样本数量降维，都是对样本的特征数量降维，也就是用少量的特征数量去表征样本的特征，这样就实现了数据降维。</p>
+</blockquote>
+<h1 id="怎么计算PCA？"><a href="#怎么计算PCA？" class="headerlink" title="怎么计算PCA？"></a>怎么计算PCA？</h1><p>PCA计算一般有两种常用的方法，分别是特征值分解法和奇异值分解法。</p>
+<h2 id="特征值分解："><a href="#特征值分解：" class="headerlink" title="特征值分解："></a>特征值分解：</h2><h3 id="推导："><a href="#推导：" class="headerlink" title="推导："></a>推导：</h3><blockquote>
+<p>PCA是要求降维后的数据$Y$的方差最大，并且基向量之间正交。</p>
+<p>数据的方差计算公式：</p>
+<p>$$\frac{1}{n - 1}\sum\limits_{i = 1}^n (U_i^T{X_i} - U_i^T\mu)^2  = \frac{1}{n - 1}\sum\limits_{i = 1}^n {U_i^T \cdot X’X{‘^T} \cdot {U_i}}$$</p>
+<p>其中的$S = X’{X’}^T$就是为$X’$的协方差矩阵，而$\mu$表示样本的平均值。</p>
+<p>注意其中$U$是正交矩阵，也就是$${U^T}U = I$$，并且协方差矩阵的特征值和特征向量满足：</p>
+<p>$$S{U_i} = \lambda {U_i}$$，也就是$U_i^TS{U_i}{\text{ = }}\lambda_i $，代入上面式子，方差计算最后的结果就是$$\frac{1}{n - 1}\sum\limits_{i = 1}^n {\lambda_i} $$。</p>
+<p>所以，选择特征值越大的特征向量，越能代表数据的原始特征。</p>
+</blockquote>
+<h3 id="计算步骤（并不是代码，简单表明一下计算步骤）："><a href="#计算步骤（并不是代码，简单表明一下计算步骤）：" class="headerlink" title="计算步骤（并不是代码，简单表明一下计算步骤）："></a>计算步骤（并不是代码，简单表明一下计算步骤）：</h3><ul>
+<li>样本均值化：$X’=X-\mu$</li>
+<li>计算协方差矩阵：$S=X’{X’}^T$或者$S’=$${X’}^TX$</li>
+<li>计算协方差矩阵的特征值和特征向量：$\lambda,V=eig(S’)$或者 $\lambda,U=eig(S)$</li>
+<li>最后计算降维后的数据：$${Y_{m \times r}} = {X_{m \times n}}{V_{n \times r}}$$或者${Y_{r \times n}} = {U^T}<em>{r \times m}{X</em>{m \times n}}$</li>
+</ul>
+<h2 id="奇异值分解，SVD，Singular-value-decomposition"><a href="#奇异值分解，SVD，Singular-value-decomposition" class="headerlink" title="奇异值分解，SVD，Singular value decomposition"></a>奇异值分解，SVD，Singular value decomposition</h2><h3 id="为什么要用奇异值分解？"><a href="#为什么要用奇异值分解？" class="headerlink" title="为什么要用奇异值分解？"></a>为什么要用奇异值分解？</h3><blockquote>
+<p>其实从上面也可以看出来，特征值分解的方法虽然不难，但是计算起来比较耗费时间。</p>
+<p>而SVD分解的方法也可以计算$U$和$V$并且有些情况下会更快。所以说，SVD可以实现PCA。不要把他们两个弄混了。</p>
+</blockquote>
+<h3 id="奇异值分解原理："><a href="#奇异值分解原理：" class="headerlink" title="奇异值分解原理："></a>奇异值分解原理：</h3><blockquote>
+<p>其实奇异值分解的原始计算方法还是利用特征值分解，具体方法如下：</p>
+<ul>
+<li>首先一个矩阵可以分解成这种形式：$X_{m\times n}=U_{m\times m}\Sigma_{m\times n} V^{T}_{n\times n}$（证明略）</li>
+<li>所以其协方差矩阵就是$$X{X’} = U{\Sigma _1}{V^T}V{\Sigma _1}^T{U^T} = U{\Sigma _1}{\Sigma _1}^T{U^T} = U\Sigma {U^T}$$，这里加了下标的就是前面的那个$\Sigma $矩阵，没加下标的矩阵是另一个矩阵，以示区别。</li>
+<li>所以$U$就是协方差矩阵$S$的特征向量构成的矩阵，当然$V$也是$S’$的特征向量构成的矩阵</li>
+<li>对$S$和$S’$进行特征值分解就可以得到$U$和$V$。</li>
+<li>$\Sigma $是一个对角矩阵，主对角元素是奇异值，一般从大到小排列，我们只需要用得到的特征值这样$$\sigma _i = \sqrt \lambda _i $$就可以得到奇异值矩阵$\Sigma $</li>
+</ul>
+</blockquote>
+<h3 id="有同学可能会问了，这不就是特征值分解的步骤吗，你这不就又回去了吗？"><a href="#有同学可能会问了，这不就是特征值分解的步骤吗，你这不就又回去了吗？" class="headerlink" title="有同学可能会问了，这不就是特征值分解的步骤吗，你这不就又回去了吗？"></a>有同学可能会问了，这不就是特征值分解的步骤吗，你这不就又回去了吗？</h3><blockquote>
+<ul>
+<li>没错，奇异值分解的步骤就是这样子，那为什么我们还用奇异值分解呢？</li>
+<li>这是因为在实际计算的时候，像一些框架，比如numpy会有特殊的算法来计算奇异值分解而不用上面那个步骤，并且速度会更快，所以使用SVD可以提高PCA的步骤。</li>
+<li><font color=gray><b>如果要自己实现的话还是使用特征值分解的方法吧，毕竟咱也没什么快速计算SVD的方法，折腾一圈算法会更慢。</b></font></li>
+</ul>
+</blockquote>
+<h3 id="那么使用奇异值分解来计算PCA的步骤是："><a href="#那么使用奇异值分解来计算PCA的步骤是：" class="headerlink" title="那么使用奇异值分解来计算PCA的步骤是："></a>那么使用奇异值分解来计算PCA的步骤是：</h3><ul>
+<li>$X=U\Sigma V^{T}$（这里我觉得应该要先对$X$做均值化操作，网上查了查没有找到，希望大佬解答疑惑）</li>
+<li>$${Y_{m \times r}} = {X_{m \times n}}{V_{n \times r}}$$或者${Y_{r \times n}} = {U^T}<em>{r \times m}{X</em>{m \times n}}$</li>
+<li>是不是感觉特别简单了呢？？</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>花了一晚上来写，主要是公式有点多，写的也不是很熟练。我也是网上查别人的博客结合个人理解总结的，如有不对请在下面评论指正。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/12/21/PCA%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/" data-id="cku7qlpby0000v4w11k5r1vtu" data-title="PCA相关总结" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deep-learning/" rel="tag">deep learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/12/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5%E4%BB%A3%E7%A0%81/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          图像拼接代码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/12/%E5%85%B3%E4%BA%8E%E5%BB%BAblog%E8%BF%87%E7%A8%8B%E5%92%8C%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">&#39;关于建blog过程和踩过的坑&#39;</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">deep learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81/" rel="tag">代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/deep-learning/" style="font-size: 20px;">deep learning</a> <a href="/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 10px;">代码</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 20px;">教程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/01/%E8%AF%AD%E4%B9%89%E7%9B%B8%E4%BC%BC%E6%80%A7%E5%88%86%E6%9E%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/01/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/01/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/12/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5%E4%BB%A3%E7%A0%81/">图像拼接代码</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/21/PCA%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/">PCA相关总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
