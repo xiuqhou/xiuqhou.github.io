@@ -1,0 +1,113 @@
+.aplayer .aplayer-list ol li .aplayer-list-index {
+    color: #6660;
+    cursor: pointer;
+}
+
+/* 调整字体大小和粗细 */
+.post-html {
+    font-size: larger
+}
+
+.post-html strong {
+    padding: 0rem;
+}
+
+.post-html table {
+    font-size: initial;
+}
+
+/* .post-html ol>li:before, .post-html ul ol>li:before, .post-html ul ul ol>li:before, .post-html ul ul ul ol>li:before {
+    content: "." counter(li);
+    color: var(--text-accent);
+    font-weight: 400;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0.5em;
+    margin-right: -1.5em;
+    text-align: right;
+    direction: rtl;
+    overflow: visible;
+    word-break: keep-all;
+    white-space: nowrap;
+} */
+
+/* 修复列表计数器的bug */
+#vcomments ol>li {
+    counter-increment:li;
+}
+#vcomments ol>li:before {
+    content: "." counter(li);
+    color: var(--text-accent);
+    font-weight: 400;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5em;
+    margin-right: .5em;
+    text-align: right;
+    direction: rtl;
+    overflow: visible;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+#vcomments ul>li:before {
+    content: "•";
+    color: var(--text-accent);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.15em;
+    padding: 0;
+    font-weight: 700;
+    text-shadow: 0 0 .5em var(--accent-2);
+}
+
+.aplayer ol>li:before {
+    content: "." counter(li);
+    color: var(--text-accent);
+    font-weight: 400;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0.5em;
+    margin-right: -1.5em;
+    text-align: right;
+    direction: rtl;
+    overflow: visible;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.aplayer .aplayer-list ol li, .aplayer .aplayer-info .aplayer-music {
+    color: black;
+}
+
+.aplayer {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+/* 字体 */
+#app {
+    font-family: HarmonyOS_Medium,Rubik,Avenir,Helvetica,Arial,sans-serif;
+}
+
+/* 调整宽度和高度，以防止字体超出范围 */
+.article .article-content p {
+    max-height: 6em;
+    overflow: hidden;
+}
+
+.feature-article .feature-content h1 {
+    max-height: 3.4em;
+    overflow: hidden;
+}
+
+.feature-article .feature-content p {
+    max-height: 5em;
+    overflow: hidden;
+}
+
+/* 稍微缩小文章上方字体，以防止遮挡 */
+.post-header .post-title {
+    font-size: clamp(1.2rem,calc(1rem + 3.5vw),3.5rem);
+    width: 22em;
+}
